@@ -79,7 +79,9 @@ function drush_behat_op_delete_term(\stdClass $term) {
  */
 function drush_behat_op_is_field($is_field_info) {
   list($entity_type, $field_name) = $is_field_info;
-  return _drush_behat_is_field($entity_type, $field_name);
+  $result = _drush_behat_is_field($entity_type, $field_name);
+  drush_print($result ? 'true' : 'false');
+  return;
 }
 
 /**
